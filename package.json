@@ -4,7 +4,7 @@
   "description": "The most secret of boxes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified. I am a bad person.\" && exit 1"
+    "test": "mocha test/server-test.js" 
   },
   "author": "Romeeka Gayhart <rrgayhart@gmail.com>",
   "license": "MIT",
