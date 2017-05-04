@@ -9,6 +9,7 @@
   "author": "Romeeka Gayhart <rrgayhart@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.15.2"
   },
   "devDependencies": {
