@@ -4,7 +4,7 @@
   "description": "The most secret of boxes",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/server-test.js" 
+    "test": "mocha test/server-test.js"
   },
   "author": "Romeeka Gayhart <rrgayhart@gmail.com>",
   "license": "MIT",
@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.3.0"
+    "mocha": "^3.3.0",
+    "request": "^2.81.0"
   }
 }
