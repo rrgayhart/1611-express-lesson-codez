@@ -34,6 +34,31 @@ describe('Server', function(){
 			});
 		});
 	});
+
+  describe('GET /api/secrets/:id', function(){
+    beforeEach(function(){
+      app.locals.secrets = {
+        wowowow: 'I am a banana'
+      }
+    })
+
+    it('should return a 404 if the response is not found', function(done){
+      this.request.get('/api/secrets/bahaha', function(error, response){
+        if(error){ done(error) }
+        assert.equal(response.statusCode, 404);
+        done();
+      });
+    });
+
+    it('should return a 200 if the response is found', function(done){
+      this.request.get('/api/secrets/wowowow', function(error, response){
+        if(error){ done(error) }
+        assert.equal(response.statusCode, 200);
+        assert(response.body.includes('wowowow'), 'ID was not included')
+        done();
+      });
+    });
+  });
 });
 
 

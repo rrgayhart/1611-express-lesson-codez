@@ -6,8 +6,21 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.locals.title = 'Secret Box';
 
+app.locals.secrets = {
+  wowowow: 'I am a banana'
+};
+
 app.get('/', function(request, response){
-  response.send('It\'s a secret to everyone');
+  response.send(app.locals.title);
+});
+
+app.get('/api/secrets/:id', function(request, response){
+  var id = request.params.id;
+  var message = app.locals.secrets[id];
+
+  if(!message){ return response.sendStatus(404) };
+
+  response.json({id: id, message: message});
 });
 
 if(!module.parent) {
